@@ -1,12 +1,12 @@
 main() {
-    HUGO_VERSION=0.127.0
+    HUGO_VERSION=0.151.0
 
     export TZ=Americas/Los Angeles
 
     # Install Hugo
     echo "Installing Hugo v${HUGO_VERSION}..."
-    curl -LJD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz
-    tar -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+    curl -LJD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz
+    tar -xf "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
     cp hugo /opt/buildhome
     rm license README.md hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz
 
