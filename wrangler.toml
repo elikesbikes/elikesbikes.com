@@ -1,0 +1,10 @@
+
+name = "christianlompwebsite"
+ompatibility_date = "2025-07-04"
+
+[build]
+command = "./build.sh"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-"
