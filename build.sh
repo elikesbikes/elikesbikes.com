@@ -12,7 +12,7 @@ main() {
 
     # Verify installed versions
     echo "Verifying installations..."
-    go: echo "$(go version)"
+    echo Go: echo "$(go version)"
     echo Hugo: "${HUGO_VERSION}"
     echo Node.js: "$(node --version)"
 
