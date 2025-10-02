@@ -1,6 +1,6 @@
 
 name = "elikesbikes"
-compatibility_date = "2025-07-04"
+compatibility_date = "2025-10-01"
 
 [build]
 command = "./build.sh"
