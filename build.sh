@@ -24,8 +24,6 @@ main() {
     # Building the website
     echo "Building the Site..."
     hugo -gc --minify
-
 }
-
 set -euo pipefail
 main "$@"
