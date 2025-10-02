@@ -1,6 +1,6 @@
 
 name = "christianlompwebsite"
-ompatibility_date = "2025-07-04"
+compatibility_date = "2025-07-04"
 
 [build]
 command = "./build.sh"
