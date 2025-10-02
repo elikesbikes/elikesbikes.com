@@ -5,7 +5,7 @@ main() {
 
     # Install Hugo
     echo "Installing Hugo v${HUGO_VERSION}..."
-    curl -LJD https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_0.151.0_Linux-64bit.tar.gz
+    curl -JD https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_0.151.0_Linux-64bit.tar.gz
     #curl -LJD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz
               
     tar -xf "hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
