@@ -1,7 +1,7 @@
 main() {
     HUGO_VERSION=0.127.0
 
-    export TZ=Europe/Berlin
+    export TZ=Americas/Los Angeles
 
     # Install Hugo
     echo "Installing Hugo v${HUGO_VERSION}..."
@@ -25,5 +25,5 @@ main() {
     echo "Building the Site..."
     hugo -gc --minify
 }
-set -euo pipefail
-main "$@"
+#set -euo pipefail
+#main "$@"
