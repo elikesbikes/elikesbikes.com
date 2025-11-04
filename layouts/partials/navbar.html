@@ -1,0 +1,7 @@
+<nav class="site-navbar" style="display:flex; justify-content:flex-end; align-items:center; padding:1rem;">
+  <ul class="menu" style="list-style:none; display:flex; gap:1rem; margin:0;">
+    {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+</nav>

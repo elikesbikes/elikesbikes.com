@@ -1,0 +1,17 @@
+baseURL = "https://elikesbikes.com/"
+languageCode = "en"
+title = "Elikesbikes"
+theme = "blowfish"
+defaultContentLanguage = "en"
+
+# Enable tags for Topics page
+[taxonomies]
+  tag = "tags"
+
+# Keep draft and future content visible when testing locally
+buildDrafts = true
+buildFuture = true
+
+# You can tweak site metadata later here
+[params]
+  mainSections = ["videos"]

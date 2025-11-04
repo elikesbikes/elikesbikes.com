@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <main>
+    <h1>{{ .Title }}</h1>
+    <div class="video-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1rem;">
+      {{ range .Pages.ByDate.Reverse }}
+        <article class="video-card">
+          <a href="{{ .RelPermalink }}">
+            <img alt="{{ .Title }}" src="https://img.youtube.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg" style="width:100%; height:auto;">
+          </a>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
+          {{ if .Params.tags }}
+            <p>Tags:
+            {{ range .Params.tags }}
+              <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+            {{ end }}
+            </p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

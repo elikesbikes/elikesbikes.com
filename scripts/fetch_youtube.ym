@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""
+scripts/fetch_youtube.py
+Fetches videos from a YouTube channel and writes Hugo content files under content/videos/
+Requires:
+  export YOUTUBE_API_KEY="..."
+  export YOUTUBE_CHANNEL_ID="UCxxxxx..."
+"""
+import os, requests, time, pathlib, re, json
+from urllib.parse import urlencode
+
+API_KEY = os.environ.get("YOUTUBE_API_KEY")
+CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID")
+OUT_DIR = pathlib.Path("content/videos")
+
+if not API_KEY or not CHANNEL_ID:
+    print("Set YOUTUBE_API_KEY and YOUTUBE_CHANNEL_ID env vars.")
+    raise SystemExit(1)
+
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Get playlist ID for uploads
+url = "https://www.googleapis.com/youtube/v3/channels"
+params = {"part":"contentDetails", "id":CHANNEL_ID, "key":API_KEY}
+r = requests.get(url, params=params)
+r.raise_for_status()
+data = r.json()
+uploads_playlist = data["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+print("Uploads playlist:", uploads_playlist)
+
+# Paginate playlistItems
+nextPageToken = None
+while True:
+    p = {"part":"snippet", "playlistId":uploads_playlist, "maxResults":50, "key":API_KEY}
+    if nextPageToken: p["pageToken"] = nextPageToken
+    r = requests.get("https://www.googleapis.com/youtube/v3/playlistItems", params=p)
+    r.raise_for_status()
+    items = r.json()
+    for it in items.get("items", []):
+        snip = it["snippet"]
+        vid_id = snip["resourceId"]["videoId"]
+        title = snip["title"]
+        description = snip.get("description","")
+        published = snip.get("publishedAt","")
+        # slug safe
+        slug = re.sub(r'[^a-zA-Z0-9-_]', '-', title).strip('-').lower()[:60]
+        content_dir = OUT_DIR / slug
+        content_dir.mkdir(parents=True, exist_ok=True)
+        md = f"""---
+title: "{title.replace('"','\\"')}"
+date: {published}
+youtube_id: "{vid_id}"
+tags: []
+description: "{description.replace('"','\\"')[:300]}"
+draft: false
+---
+"""
+        (content_dir / "index.md").write_text(md, encoding="utf-8")
+        print("Wrote", content_dir / "index.md")
+    nextPageToken = items.get("nextPageToken")
+    if not nextPageToken:
+        break
+    time.sleep(0.1)
+print("Done fetching videos.")
