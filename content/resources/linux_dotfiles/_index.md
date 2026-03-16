@@ -5,24 +5,34 @@ date: 2025-11-04T00:00:00-08:00
 type: "repo"
 github_url: "https://github.com/elikesbikes/linux_dotfiles"
 tech: ["Shell", "Bash", "Lua", "Neovim"]
+folders:
+  - name: ".bash"
+    description: "Core Bash config split into focused files — aliases, functions, misc, and Starship shell prompt integration."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/.bash"
+  - name: ".config"
+    description: "App configs for Neovim, Alacritty, Kitty, Starship, Eza, Fastfetch, Neofetch, and VeraCrypt."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/.config"
+  - name: "scripts"
+    description: "Utility and automation scripts — Linux system tools, UniFi, Proxmox, TrueNAS, Restic, and onboarding."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/scripts"
+  - name: "sudoers"
+    description: "Modular sudoers configuration split by concern — defaults, admin, diagnostics, filesystem, and scripts."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/sudoers"
+  - name: "exports"
+    description: "Exported system configs including dconf settings for media keys and keyboard bindings."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/exports"
+  - name: ".local"
+    description: "Omakub framework bash defaults — aliases, functions, prompt, inputrc, and shell init files."
+    url: "https://github.com/elikesbikes/linux_dotfiles/tree/main/.local"
 ---
 
 A curated set of Linux configuration files built around one principle: explicit over clever. No automated installers — clone it, read it, and copy what makes sense for your setup.
-
-## What's Configured
-
-- **Shell** — modular Bash config split across `.bash/`, with clean separation of aliases, functions, and env vars
-- **Neovim** — Lua-based config using Lazy.nvim for plugin management
-- **Terminal** — consistent look and feel across Kitty, Alacritty, and Starship prompt
-- **Environment** — documented `.env` structure for managing environment variables across machines
 
 ## How to Use
 
 1. Clone the repo
 2. Browse the files — don't copy blindly
-3. Symlink or copy the configs you want into your home directory
-
-The repo is organized by tool, so it's easy to grab just the pieces you need without pulling in everything else.
+3. Symlink or copy the configs you want into your home directory (uses GNU Stow)
 
 ## Who It's For
 

@@ -14,8 +14,8 @@
   <meta name="theme-color">
 
   
-  <title>linux_dotfiles &middot; elikesbikes</title>
-    <meta name="title" content="linux_dotfiles &middot; elikesbikes">
+  <title>linux_dotfiles &middot; Emmanuel Loaiza (tars)</title>
+    <meta name="title" content="linux_dotfiles &middot; Emmanuel Loaiza (tars)">
 
   
   <meta name="description" content="My personal Linux config files — modular, explicit, and built for people who want to understand their own setup.">
@@ -24,7 +24,7 @@
   
   <link rel="canonical" href="http://localhost:44503/resources/linux_dotfiles/">
   
-      <link rel="alternate" type="application/rss+xml" href="/resources/linux_dotfiles/index.xml" title="elikesbikes" />
+      <link rel="alternate" type="application/rss+xml" href="/resources/linux_dotfiles/index.xml" title="Emmanuel Loaiza (tars)" />
   
   
   
@@ -100,7 +100,7 @@
 
   
   <meta property="og:url" content="http://localhost:44503/resources/linux_dotfiles/">
-  <meta property="og:site_name" content="elikesbikes">
+  <meta property="og:site_name" content="Emmanuel Loaiza (tars)">
   <meta property="og:title" content="linux_dotfiles">
   <meta property="og:description" content="My personal Linux config files — modular, explicit, and built for people who want to understand their own setup.">
   <meta property="og:locale" content="en">
@@ -230,7 +230,7 @@
     <nav class="flex space-x-3">
       
         <a href="/" class="text-base font-medium">
-          elikesbikes
+          Emmanuel Loaiza (tars)
         </a>
       
     </nav>
@@ -246,20 +246,6 @@
   
   <p class="text-base font-medium" title="Videos">
     Videos
-  </p>
-</a>
-
-
-
-      
-        
-  <a
-  href="/topics/"
-  
-  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
-  
-  <p class="text-base font-medium" title="Topics">
-    Topics
   </p>
 </a>
 
@@ -469,22 +455,6 @@
               
   <li class="mt-1">
   <a
-    href="/topics/"
-    
-    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
-    
-    <p class="text-bg font-bg" title="Topics">
-      Topics
-    </p>
-  </a>
-</li>
-
-
-
-            
-              
-  <li class="mt-1">
-  <a
     href="/resources/"
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
     
@@ -633,22 +603,6 @@
     <div style="line-height:1.75; color:#c9d1d9; margin-bottom:2rem;">
       <p>A curated set of Linux configuration files built around one principle: explicit over clever. No automated installers — clone it, read it, and copy what makes sense for your setup.</p>
 
-<h2 class="relative group">What&rsquo;s Configured 
-    <div id="whats-configured" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#whats-configured" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<ul>
-<li><strong>Shell</strong> — modular Bash config split across <code>.bash/</code>, with clean separation of aliases, functions, and env vars</li>
-<li><strong>Neovim</strong> — Lua-based config using Lazy.nvim for plugin management</li>
-<li><strong>Terminal</strong> — consistent look and feel across Kitty, Alacritty, and Starship prompt</li>
-<li><strong>Environment</strong> — documented <code>.env</code> structure for managing environment variables across machines</li>
-</ul>
-
 <h2 class="relative group">How to Use 
     <div id="how-to-use" class="anchor"></div>
     
@@ -661,9 +615,8 @@
 <ol>
 <li>Clone the repo</li>
 <li>Browse the files — don&rsquo;t copy blindly</li>
-<li>Symlink or copy the configs you want into your home directory</li>
+<li>Symlink or copy the configs you want into your home directory (uses GNU Stow)</li>
 </ol>
-<p>The repo is organized by tool, so it&rsquo;s easy to grab just the pieces you need without pulling in everything else.</p>
 
 <h2 class="relative group">Who It&rsquo;s For 
     <div id="who-its-for" class="anchor"></div>
@@ -680,6 +633,70 @@
   
 
   
+  
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/.bash" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 .bash</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">Core Bash config split into focused files — aliases, functions, misc, and Starship shell prompt integration.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/.config" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 .config</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">App configs for Neovim, Alacritty, Kitty, Starship, Eza, Fastfetch, Neofetch, and VeraCrypt.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/scripts" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 scripts</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">Utility and automation scripts — Linux system tools, UniFi, Proxmox, TrueNAS, Restic, and onboarding.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/sudoers" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 sudoers</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">Modular sudoers configuration split by concern — defaults, admin, diagnostics, filesystem, and scripts.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/exports" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 exports</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">Exported system configs including dconf settings for media keys and keyboard bindings.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+        
+        <a href="https://github.com/elikesbikes/linux_dotfiles/tree/main/.local" target="_blank" rel="noopener"
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 .local</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">Omakub framework bash defaults — aliases, functions, prompt, inputrc, and shell init files.</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">Open in GitHub ↗</span>
+        </a>
+      
+    </div>
   
 
 </main>
