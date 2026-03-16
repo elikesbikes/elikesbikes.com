@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Videos on Emmanuel Loaiza (tars)</title>
-    <link>http://localhost:44503/videos/</link>
-    <description>Recent content in Videos on Emmanuel Loaiza (tars)</description>
+    <title>Racing on Emmanuel Loaiza (tars)</title>
+    <link>http://localhost:44503/tags/racing/</link>
+    <description>Recent content in Racing on Emmanuel Loaiza (tars)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
     <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
     <copyright>© 2026 Emmanuel Loaiza</copyright>
-    <lastBuildDate>Tue, 04 Nov 2025 00:00:00 -0800</lastBuildDate><atom:link href="http://localhost:44503/videos/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>August 31, 2024</title>
-      <link>http://localhost:44503/videos/august-31-2024/</link>
-      <pubDate>Sat, 31 Aug 2024 19:00:49 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/august-31-2024/</guid>
-      <description></description>
-      
-    </item>
+    <lastBuildDate>Tue, 18 Jun 2024 16:28:26 +0000</lastBuildDate><atom:link href="http://localhost:44503/tags/racing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>2024 - Giro di San Diego - California</title>
@@ -82,16 +72,6 @@
     </item>
     
     <item>
-      <title>My First Video</title>
-      <link>http://localhost:44503/videos/my-first-video/</link>
-      <pubDate>Thu, 22 Feb 2024 04:45:48 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/my-first-video/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>2023 - JKC RoadRace - California</title>
       <link>http://localhost:44503/videos/2023-jkc-roadrace-california/</link>
       <pubDate>Wed, 24 May 2023 04:25:51 +0000</pubDate>
@@ -117,46 +97,6 @@
       <pubDate>Tue, 11 Apr 2023 11:59:58 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
       <guid>http://localhost:44503/videos/2023-slr-road-race-california/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>PRT TrainingCamp 2022</title>
-      <link>http://localhost:44503/videos/prt-trainingcamp-2022/</link>
-      <pubDate>Wed, 19 Oct 2022 03:17:42 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/prt-trainingcamp-2022/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>4-4-2020 Ride</title>
-      <link>http://localhost:44503/videos/4-4-2020-ride/</link>
-      <pubDate>Mon, 18 May 2020 11:56:19 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/4-4-2020-ride/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>2020 - Ride 03-22 - New England</title>
-      <link>http://localhost:44503/videos/2020-ride-03-22-new-england/</link>
-      <pubDate>Sun, 29 Mar 2020 16:59:57 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/2020-ride-03-22-new-england/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>2020 - 03-15 - New England</title>
-      <link>http://localhost:44503/videos/2020-03-15-new-england/</link>
-      <pubDate>Thu, 26 Mar 2020 10:05:50 +0000</pubDate>
-      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/videos/2020-03-15-new-england/</guid>
       <description></description>
       
     </item>

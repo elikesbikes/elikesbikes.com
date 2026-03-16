@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cyclocross on Emmanuel Loaiza (tars)</title>
+    <link>http://localhost:44503/tags/cyclocross/</link>
+    <description>Recent content in Cyclocross on Emmanuel Loaiza (tars)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
+    <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
+    <copyright>© 2026 Emmanuel Loaiza</copyright>
+    <lastBuildDate>Sat, 18 May 2024 05:15:21 +0000</lastBuildDate><atom:link href="http://localhost:44503/tags/cyclocross/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2019 - CX Race Gloucester - New England</title>
+      <link>http://localhost:44503/videos/2019-cx-race-gloucester-new-england/</link>
+      <pubDate>Sat, 18 May 2024 05:15:21 +0000</pubDate>
+      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
+      <guid>http://localhost:44503/videos/2019-cx-race-gloucester-new-england/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

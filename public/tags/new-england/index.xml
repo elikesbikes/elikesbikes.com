@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>New-England on Emmanuel Loaiza (tars)</title>
+    <link>http://localhost:44503/tags/new-england/</link>
+    <description>Recent content in New-England on Emmanuel Loaiza (tars)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
+    <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
+    <copyright>© 2026 Emmanuel Loaiza</copyright>
+    <lastBuildDate>Sat, 18 May 2024 05:15:21 +0000</lastBuildDate><atom:link href="http://localhost:44503/tags/new-england/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2019 - CX Race Gloucester - New England</title>
+      <link>http://localhost:44503/videos/2019-cx-race-gloucester-new-england/</link>
+      <pubDate>Sat, 18 May 2024 05:15:21 +0000</pubDate>
+      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
+      <guid>http://localhost:44503/videos/2019-cx-race-gloucester-new-england/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>2020 - Ride 03-22 - New England</title>
+      <link>http://localhost:44503/videos/2020-ride-03-22-new-england/</link>
+      <pubDate>Sun, 29 Mar 2020 16:59:57 +0000</pubDate>
+      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
+      <guid>http://localhost:44503/videos/2020-ride-03-22-new-england/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>2020 - 03-15 - New England</title>
+      <link>http://localhost:44503/videos/2020-03-15-new-england/</link>
+      <pubDate>Thu, 26 Mar 2020 10:05:50 +0000</pubDate>
+      <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
+      <guid>http://localhost:44503/videos/2020-03-15-new-england/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
