@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Emmanuel Loaiza (tars)</title>
-    <link>http://localhost:44503/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Emmanuel Loaiza (tars)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
     <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
     <copyright>© 2026 Emmanuel Loaiza</copyright>
-    <lastBuildDate>Sat, 31 Aug 2024 19:00:49 +0000</lastBuildDate><atom:link href="http://localhost:44503/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Aug 2024 19:00:49 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Cycling</title>
-      <link>http://localhost:44503/tags/cycling/</link>
+      <link>http://localhost:1313/tags/cycling/</link>
       <pubDate>Sat, 31 Aug 2024 19:00:49 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/cycling/</guid>
+      <guid>http://localhost:1313/tags/cycling/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>California</title>
-      <link>http://localhost:44503/tags/california/</link>
+      <link>http://localhost:1313/tags/california/</link>
       <pubDate>Tue, 18 Jun 2024 16:28:26 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/california/</guid>
+      <guid>http://localhost:1313/tags/california/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Racing</title>
-      <link>http://localhost:44503/tags/racing/</link>
+      <link>http://localhost:1313/tags/racing/</link>
       <pubDate>Tue, 18 Jun 2024 16:28:26 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/racing/</guid>
+      <guid>http://localhost:1313/tags/racing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Cyclocross</title>
-      <link>http://localhost:44503/tags/cyclocross/</link>
+      <link>http://localhost:1313/tags/cyclocross/</link>
       <pubDate>Sat, 18 May 2024 05:15:21 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/cyclocross/</guid>
+      <guid>http://localhost:1313/tags/cyclocross/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>New-England</title>
-      <link>http://localhost:44503/tags/new-england/</link>
+      <link>http://localhost:1313/tags/new-england/</link>
       <pubDate>Sat, 18 May 2024 05:15:21 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/new-england/</guid>
+      <guid>http://localhost:1313/tags/new-england/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Training</title>
-      <link>http://localhost:44503/tags/training/</link>
+      <link>http://localhost:1313/tags/training/</link>
       <pubDate>Wed, 19 Oct 2022 03:17:42 +0000</pubDate>
       <author>eloaizac@elikesbikes.com (Emmanuel Loaiza)</author>
-      <guid>http://localhost:44503/tags/training/</guid>
+      <guid>http://localhost:1313/tags/training/</guid>
       <description></description>
       
     </item>

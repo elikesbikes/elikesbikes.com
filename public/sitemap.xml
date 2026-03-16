@@ -3,151 +3,151 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:44503/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/resources/tutorials/docker-compose/</loc>
+    <loc>http://localhost:1313/resources/tutorials/docker-compose/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/resources/homelab/</loc>
+    <loc>http://localhost:1313/resources/homelab/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/resources/linux_dotfiles/</loc>
+    <loc>http://localhost:1313/resources/linux_dotfiles/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/resources/</loc>
+    <loc>http://localhost:1313/resources/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/topics/</loc>
+    <loc>http://localhost:1313/topics/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/resources/tutorials/</loc>
+    <loc>http://localhost:1313/resources/tutorials/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/</loc>
+    <loc>http://localhost:1313/videos/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-11-04T00:00:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/august-31-2024/</loc>
+    <loc>http://localhost:1313/videos/august-31-2024/</loc>
     <lastmod>2024-08-31T19:00:49+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2024-giro-di-san-diego-california/</loc>
+    <loc>http://localhost:1313/videos/2024-giro-di-san-diego-california/</loc>
     <lastmod>2024-06-18T16:28:26+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2024-jkc-road-race-california/</loc>
+    <loc>http://localhost:1313/videos/2024-jkc-road-race-california/</loc>
     <lastmod>2024-05-20T01:55:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2019-cx-race-gloucester-new-england/</loc>
+    <loc>http://localhost:1313/videos/2019-cx-race-gloucester-new-england/</loc>
     <lastmod>2024-05-18T05:15:21+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2024-boulevard-rr-california/</loc>
+    <loc>http://localhost:1313/videos/2024-boulevard-rr-california/</loc>
     <lastmod>2024-05-12T02:41:07+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2022-road-race-jkc-california/</loc>
+    <loc>http://localhost:1313/videos/2022-road-race-jkc-california/</loc>
     <lastmod>2024-05-04T17:49:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2024-san-diego-grand-fondo-california/</loc>
+    <loc>http://localhost:1313/videos/2024-san-diego-grand-fondo-california/</loc>
     <lastmod>2024-05-02T04:51:21+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/my-first-video/</loc>
+    <loc>http://localhost:1313/videos/my-first-video/</loc>
     <lastmod>2024-02-22T04:45:48+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2023-jkc-roadrace-california/</loc>
+    <loc>http://localhost:1313/videos/2023-jkc-roadrace-california/</loc>
     <lastmod>2023-05-24T04:25:51+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2023-bwr-ca-wana-full-race/</loc>
+    <loc>http://localhost:1313/videos/2023-bwr-ca-wana-full-race/</loc>
     <lastmod>2023-04-20T10:21:03+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2023-slr-road-race-california/</loc>
+    <loc>http://localhost:1313/videos/2023-slr-road-race-california/</loc>
     <lastmod>2023-04-11T11:59:58+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/prt-trainingcamp-2022/</loc>
+    <loc>http://localhost:1313/videos/prt-trainingcamp-2022/</loc>
     <lastmod>2022-10-19T03:17:42+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/4-4-2020-ride/</loc>
+    <loc>http://localhost:1313/videos/4-4-2020-ride/</loc>
     <lastmod>2020-05-18T11:56:19+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2020-ride-03-22-new-england/</loc>
+    <loc>http://localhost:1313/videos/2020-ride-03-22-new-england/</loc>
     <lastmod>2020-03-29T16:59:57+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/videos/2020-03-15-new-england/</loc>
+    <loc>http://localhost:1313/videos/2020-03-15-new-england/</loc>
     <lastmod>2020-03-26T10:05:50+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:44503/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

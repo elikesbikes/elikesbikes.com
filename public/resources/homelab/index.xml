@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>homelab on Emmanuel Loaiza (tars)</title>
-    <link>http://localhost:44503/resources/homelab/</link>
+    <link>http://localhost:1313/resources/homelab/</link>
     <description>Recent content in homelab on Emmanuel Loaiza (tars)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
     <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
     <copyright>© 2026 Emmanuel Loaiza</copyright>
-    <lastBuildDate>Tue, 04 Nov 2025 00:00:00 -0800</lastBuildDate><atom:link href="http://localhost:44503/resources/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Nov 2025 00:00:00 -0800</lastBuildDate><atom:link href="http://localhost:1313/resources/homelab/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
