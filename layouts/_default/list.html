@@ -2,14 +2,20 @@
   <main>
     <h1>{{ .Title }}</h1>
 
+    {{ if .Content }}
+      <div class="content">{{ .Content }}</div>
+    {{ end }}
+
     {{ if or (eq .Kind "taxonomy") (eq .Kind "taxonomyTerm") }}
       <p>Showing content for: {{ .Title }}</p>
     {{ end }}
 
-    <ul>
-      {{ range .Pages.ByDate.Reverse }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "2006-01-02" }}</li>
-      {{ end }}
-    </ul>
+    {{ if .Pages }}
+      <ul>
+        {{ range .Pages.ByDate.Reverse }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "2006-01-02" }}</li>
+        {{ end }}
+      </ul>
+    {{ end }}
   </main>
 {{ end }}

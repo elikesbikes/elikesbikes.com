@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on elikesbikes</title>
-    <link>http://localhost:1313/series/</link>
+    <link>http://localhost:44503/series/</link>
     <description>Recent content in Series on elikesbikes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
     <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
-    <copyright>© 2025 Emmanuel Loaiza</copyright>
-    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2026 Emmanuel Loaiza</copyright>
+    <atom:link href="http://localhost:44503/series/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

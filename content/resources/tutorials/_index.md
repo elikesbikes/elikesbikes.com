@@ -1,0 +1,41 @@
+---
+title: "tutorials"
+description: "Reference configs, starter templates, and working examples across Docker, Linux, networking, IoT, and more."
+date: 2025-11-04T00:00:00-08:00
+type: "repo"
+github_url: "https://github.com/elikesbikes/tutorials"
+tech: ["Docker", "Linux", "Proxmox", "Networking", "ESP32", "Ansible"]
+folders:
+  - name: "docker-compose"
+    description: "44 production-ready Docker Compose stacks — Traefik, Nextcloud, Graylog, n8n, Jellyfin, Wazuh, and more."
+    url: "/resources/tutorials/docker-compose/"
+  - name: "linux"
+    description: "Linux command references and configs — bash, docker, grep, sed, rsyslog, Starship, and more."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/linux"
+  - name: "proxmox"
+    description: "Proxmox setup and configuration guides."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/proxmox"
+  - name: "network"
+    description: "Networking configs for pfSense, Cisco ISR, Tailscale, multicast, and zero-trust setups."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/network"
+  - name: "nextcloud"
+    description: "Nextcloud deployment and configuration references."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/nextcloud"
+  - name: "esp32-arduino"
+    description: "ESP32 and Arduino projects — camera streaming, RTSP, SwitchBot, MQTT, and BLE libraries."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/esp32-arduino"
+  - name: "Obsidian"
+    description: "Obsidian vault templates — logs, projects, books, recipes, meetings, and more."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/Obsidian"
+  - name: "linode"
+    description: "Linode-hosted service configs including Nextcloud and Uptime Kuma."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/linode"
+  - name: "windows"
+    description: "Windows Server setup — Active Directory, WSL2 SSH, and initial server config."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/windows"
+  - name: "AI"
+    description: "AI-related references and experiments."
+    url: "https://github.com/elikesbikes/tutorials/tree/main/AI"
+---
+
+A growing collection of working configs and reference templates I use across my homelab and projects. Organized by topic — grab the folder you need and adapt it.

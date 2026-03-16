@@ -1,22 +1,25 @@
-# This is a structured data file for Hugo.
-# While the resources.md file above uses a static markdown table for simplicity,
-# you can use this YAML file to manage your repository data and build a custom
-# template later that dynamically generates the resource links.
-
 github_repos:
   - name: "homelab"
-    description: "Homelab configuration files and documentation."
+    description: "Infrastructure configuration files for my homelab — Ansible, Docker Compose, and network configs."
     url: "https://github.com/elikesbikes/homelab"
     language: "YAML/Shell"
+    page: "/resources/homelab/"
+    pinned: true
+  - name: "tutorials"
+    description: "Templates and examples for Docker, Kubernetes, Ansible, and other homelab tools."
+    url: "https://github.com/elikesbikes/tutorials"
+    language: "Markdown"
+    page: "/resources/tutorials/"
+    pinned: true
+  - name: "linux_dotfiles"
+    description: "My personal Linux configuration files — shell, Neovim, tmux, and more."
+    url: "https://github.com/elikesbikes/linux_dotfiles"
+    language: "Shell/Lua"
+    page: "/resources/linux_dotfiles/"
+    pinned: true
   - name: "Linode"
     description: "Projects and infrastructure-as-code related to Linode/cloud platforms."
     url: "https://github.com/elikesbikes/Linode"
     language: "Go"
-  - name: "tutorials"
-    description: "Templates and examples for various projects like Docker, K8S, and Ansible."
-    url: "https://github.com/elikesbikes/tutorials"
-    language: "Markdown"
-  - name: "linux_dotfiles"
-    description: "My personal Linux configuration files (dotfiles) for my Homelab setup."
-    url: "https://github.com/elikesbikes/linux_dotfiles"
-    language: "Lua"
+    page: ""
+    pinned: false

@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main style="max-width:900px; margin:0 auto; padding:2rem 1rem;">
+
+  <h1 style="margin-bottom:0.5rem;">{{ .Title }}</h1>
+  {{ if .Content }}
+    <div style="color:#8892a4; margin-bottom:2rem;">{{ .Content }}</div>
+  {{ end }}
+
+  <!-- Repo cards -->
+  {{ if .Sections }}
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      {{ range .Sections }}
+        <article style="background:#1a2535; border:1px solid #2d3748; border-radius:8px; padding:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+
+          <h2 style="margin:0; font-size:1.2rem;">
+            <a href="{{ .RelPermalink }}" style="color:#7fb3f5; text-decoration:none;">{{ .Title }}</a>
+          </h2>
+
+          {{ with .Description }}
+            <p style="color:#8892a4; font-size:0.9rem; margin:0; line-height:1.5;">{{ . }}</p>
+          {{ end }}
+
+          {{ with .Params.tech }}
+            <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+              {{ range . }}
+                <span style="background:#0d2137; color:#7fb3f5; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem;">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          <div style="margin-top:auto; display:flex; gap:1rem; align-items:center;">
+            <a href="{{ .RelPermalink }}" style="color:#58a6ff; font-size:0.875rem; text-decoration:none;">Details →</a>
+            {{ with .Params.github_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" style="color:#8892a4; font-size:0.875rem; text-decoration:none;">GitHub ↗</a>
+            {{ end }}
+          </div>
+
+        </article>
+      {{ end }}
+    </div>
+  {{ end }}
+
+</main>
+{{ end }}

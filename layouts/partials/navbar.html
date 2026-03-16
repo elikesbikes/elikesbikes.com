@@ -1,7 +1,21 @@
 <nav class="site-navbar" style="display:flex; justify-content:flex-end; align-items:center; padding:1rem;">
   <ul class="menu" style="list-style:none; display:flex; gap:1rem; margin:0;">
     {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ if not .Parent }}
+        <li style="position:relative;" class="menu-item{{ if .HasChildren }} has-dropdown{{ end }}">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ if .HasChildren }}
+            <ul class="dropdown" style="display:none; position:absolute; top:100%; left:0; background:#1a2535; list-style:none; padding:0.5rem 0; min-width:160px; z-index:100; border-radius:4px;">
+              {{ range .Children }}
+                <li><a href="{{ .URL }}" style="display:block; padding:0.4rem 1rem; white-space:nowrap;">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </li>
+      {{ end }}
     {{ end }}
   </ul>
 </nav>
+<style>
+  .has-dropdown:hover .dropdown { display: block !important; }
+</style>

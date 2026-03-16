@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux_dotfiles on elikesbikes</title>
+    <link>http://localhost:44503/resources/linux_dotfiles/</link>
+    <description>Recent content in linux_dotfiles on elikesbikes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>eloaizac@elikesbikes.com (Emmanuel Loaiza)</managingEditor>
+    <webMaster>eloaizac@elikesbikes.com (Emmanuel Loaiza)</webMaster>
+    <copyright>© 2026 Emmanuel Loaiza</copyright>
+    <lastBuildDate>Tue, 04 Nov 2025 00:00:00 -0800</lastBuildDate><atom:link href="http://localhost:44503/resources/linux_dotfiles/index.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>
