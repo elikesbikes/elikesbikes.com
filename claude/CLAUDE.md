@@ -51,6 +51,9 @@ layouts/
 data/
   resources.yaml        Repo metadata (name, description, url, language, pinned, page)
 
+static/
+  images/projects/      SVG thumbnails for Recent Project cards (e.g. n8n.svg)
+
 scripts/
   fetch_youtube.ym      Fetches YouTube videos → content/videos/ markdown files
   fetch_github_repos.py Fetches GitHub repos → content/resources/_repos.md
@@ -106,11 +109,14 @@ Layout order:
 
 Frontmatter fields for `recent_project`:
 - `name` — project/folder name
-- `description` — one-liner shown in the card
+- `description` — one-liner shown below the thumbnail
 - `url` — GitHub URL (opens in new tab)
+- `thumbnail` — path to a 16:9 image (e.g. `/images/projects/n8n.svg`); optional — card omits image block if missing
 - `icons` — array of `{name, url}` using Simple Icons CDN (`https://cdn.simpleicons.org/{icon}/{color}`)
 
-To update the featured project, edit `content/_index.md`. Browse icons at https://simpleicons.org.
+The card renders as a vertical tile: large 16:9 thumbnail on top, then icons + name + GitHub button + description below — matching the style of YouTube video cards.
+
+To update the featured project, edit `content/_index.md`. Add the SVG thumbnail to `static/images/projects/`. Browse icons at https://simpleicons.org.
 To add/remove social links, edit `layouts/index.html` directly.
 
 ### Resources landing (`/resources/`)
