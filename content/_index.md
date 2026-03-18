@@ -6,6 +6,7 @@ recent_project:
   name: "n8n"
   description: "Visual workflow automation with integrations for Garmin, Graylog, Home Assistant, Proxmox, and Unifi."
   url: "https://github.com/elikesbikes/tutorials/tree/main/docker-compose/n8n"
+  thumbnail: "/images/projects/n8n.svg"
   icons:
     - name: "n8n"
       url: "https://cdn.simpleicons.org/n8n/EA4B71"

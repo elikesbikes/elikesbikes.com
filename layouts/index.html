@@ -68,30 +68,41 @@
   <!-- Recent Project -->
   {{ with .Params.recent_project }}
   <div style="margin-bottom:2rem;">
-    <p style="font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8892a4; margin:0 0 0.6rem;">
+    <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#e6edf3; margin:0 0 0.6rem;">
       🕐 Recent Project
     </p>
-    <a href="{{ .url }}" target="_blank" rel="noopener"
-       style="display:flex; align-items:center; gap:0.75rem; background:#1a2535; border:1px solid #2d3748;
-              border-radius:8px; padding:0.85rem 1.25rem; text-decoration:none; transition:border-color 0.15s;"
-       onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+    <article style="background:#1a2535; border:1px solid #2d3748; border-radius:10px; overflow:hidden;"
+             onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
 
-      {{ with .icons }}
-      <div style="display:flex; align-items:center; gap:0.4rem; flex-shrink:0;">
-        {{ range . }}
-        <img src="{{ .url }}" alt="{{ .name }}" width="20" height="20" style="border-radius:3px;" title="{{ .name }}">
-        {{ end }}
-      </div>
-      <div style="width:1px; height:1.25rem; background:#2d3748; flex-shrink:0;"></div>
+      {{ with .thumbnail }}
+      <a href="{{ $.Params.recent_project.url }}" target="_blank" rel="noopener"
+         style="display:block; position:relative; aspect-ratio:16/9; overflow:hidden; background:#0d1117;">
+        <img src="{{ . }}" alt="{{ $.Params.recent_project.name }}"
+             style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy" />
+      </a>
       {{ end }}
 
-      <span style="font-weight:600; color:#e6edf3; font-size:0.95rem; flex-shrink:0;">{{ .name }}</span>
-      <span style="color:#8892a4; font-size:0.85rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ .description }}</span>
-      <span style="margin-left:auto; flex-shrink:0; background:#238636; color:#fff;
-                   padding:0.2rem 0.65rem; border-radius:999px; font-size:0.75rem; font-weight:600;">
-        GitHub ↗
-      </span>
-    </a>
+      <div style="padding:1rem 1.25rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+          {{ with .icons }}
+          <div style="display:flex; align-items:center; gap:0.4rem; flex-shrink:0;">
+            {{ range . }}
+            <img src="{{ .url }}" alt="{{ .name }}" width="20" height="20" style="border-radius:3px;" title="{{ .name }}">
+            {{ end }}
+          </div>
+          <div style="width:1px; height:1.25rem; background:#2d3748; flex-shrink:0;"></div>
+          {{ end }}
+          <a href="{{ .url }}" target="_blank" rel="noopener"
+             style="font-weight:600; color:#e6edf3; font-size:0.95rem; text-decoration:none; flex-shrink:0;">{{ .name }}</a>
+          <span style="margin-left:auto; flex-shrink:0; background:#238636; color:#fff;
+                       padding:0.2rem 0.65rem; border-radius:999px; font-size:0.75rem; font-weight:600;">
+            <a href="{{ .url }}" target="_blank" rel="noopener" style="color:#fff; text-decoration:none;">GitHub ↗</a>
+          </span>
+        </div>
+        <p style="color:#8892a4; font-size:0.85rem; margin:0.5rem 0 0;">{{ .description }}</p>
+      </div>
+
+    </article>
   </div>
   {{ end }}
 
