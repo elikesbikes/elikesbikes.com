@@ -40,6 +40,7 @@ content/
   search/_index.md      Required for Blowfish search to work (layout: search)
 
 layouts/
+  index.html            Custom homepage — bio content + Recent Project card
   _default/list.html    Renders .Content + .Pages list for all section pages
   about/list.html       Custom about page — profile photo, bio, social cards
   repo/list.html        Repo detail pages — header, tech badges, GitHub CTA, folder grid
@@ -91,6 +92,26 @@ Frontmatter fields:
 - `folders` — array of `{name, description, url}` rendered as a card grid
   - If `url` starts with `http`, opens in new tab with "Open in GitHub ↗"
   - If `url` is a local path (e.g. `/resources/tutorials/docker-compose/`), opens internally with "View details →"
+
+### Homepage (`/`)
+Rendered by `layouts/index.html` (custom — overrides Blowfish default).
+
+Layout order:
+1. Profile photo (centered, 120px circle) — from `params.author.image` in `languages.en.toml`
+2. Name — from `params.author.name`
+3. Headline — from `params.author.headline`
+4. Bio text — from `content/_index.md` body
+5. Social link pills — YouTube, GitHub, Discord, Strava, TrainerRoad (hardcoded in layout, icons via Simple Icons CDN)
+6. Recent Project card — driven by `recent_project` frontmatter in `content/_index.md`
+
+Frontmatter fields for `recent_project`:
+- `name` — project/folder name
+- `description` — one-liner shown in the card
+- `url` — GitHub URL (opens in new tab)
+- `icons` — array of `{name, url}` using Simple Icons CDN (`https://cdn.simpleicons.org/{icon}/{color}`)
+
+To update the featured project, edit `content/_index.md`. Browse icons at https://simpleicons.org.
+To add/remove social links, edit `layouts/index.html` directly.
 
 ### Resources landing (`/resources/`)
 Rendered by `layouts/resources/list.html`.
@@ -147,6 +168,6 @@ Custom 404 handling is configured in `wrangler.toml`.
 
 | Repo | Site page | Notes |
 |---|---|---|
-| elikesbikes/homelab | `/resources/homelab/` | 8 folders: AI, Ansible, HomeAssistant, HUGO, Linux, Network, Proxmox, UPS |
+| elikesbikes/homelab | `/resources/homelab/` | 9 folders: AI, Ansible, HomeAssistant, HUGO, Linux, Network, Proxmox, Monitoring, UPS |
 | elikesbikes/tutorials | `/resources/tutorials/` | 10 folders; docker-compose has its own Hugo subpage with 44 stacks |
 | elikesbikes/linux_dotfiles | `/resources/linux_dotfiles/` | 6 folders: .bash, .config, scripts, sudoers, exports, .local |
