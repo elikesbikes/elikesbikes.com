@@ -1,0 +1,55 @@
+{{ define "main" }}
+<main style="max-width:800px; margin:0 auto; padding:2rem 1rem;">
+
+  <!-- Header -->
+  <div style="border-bottom:1px solid #2d3748; padding-bottom:1.5rem; margin-bottom:2rem;">
+    <h1 style="font-size:2rem; margin:0 0 0.5rem;">{{ .Title }}</h1>
+    {{ with .Description }}
+      <p style="color:#8892a4; font-size:1.05rem; margin:0 0 1.25rem;">{{ . }}</p>
+    {{ end }}
+
+    <!-- Tech badges -->
+    {{ with .Params.tech }}
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+        {{ range . }}
+          <span style="background:#1e3a5f; color:#7fb3f5; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.8rem; font-weight:500;">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <!-- GitHub CTA -->
+    {{ with .Params.github_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         style="display:inline-flex; align-items:center; gap:0.5rem; background:#238636; color:#fff;
+                padding:0.6rem 1.4rem; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.95rem;">
+        View on GitHub →
+      </a>
+    {{ end }}
+  </div>
+
+  <!-- Page content (markdown body) -->
+  {{ if .Content }}
+    <div style="line-height:1.75; color:#c9d1d9; margin-bottom:2rem;">
+      {{ .Content }}
+    </div>
+  {{ end }}
+
+  <!-- Folder grid (if defined in frontmatter) -->
+  {{ with .Params.folders }}
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+      {{ range . }}
+        {{ $external := hasPrefix .url "http" }}
+        <a href="{{ .url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}
+           style="display:flex; flex-direction:column; gap:0.4rem; background:#1a2535; border:1px solid #2d3748;
+                  border-radius:8px; padding:1.25rem; text-decoration:none; transition:border-color 0.15s;"
+           onmouseover="this.style.borderColor='#58a6ff'" onmouseout="this.style.borderColor='#2d3748'">
+          <span style="font-weight:600; color:#e6edf3; font-size:0.95rem;">📁 {{ .name }}</span>
+          <span style="color:#8892a4; font-size:0.85rem; line-height:1.5;">{{ .description }}</span>
+          <span style="color:#58a6ff; font-size:0.8rem; margin-top:0.25rem;">{{ if $external }}Open in GitHub ↗{{ else }}View details →{{ end }}</span>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+</main>
+{{ end }}
