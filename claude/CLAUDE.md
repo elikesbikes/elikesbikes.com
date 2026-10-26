@@ -138,5 +138,5 @@ watcher only follows directories that existed at startup.
 
 - No Open Graph image yet (`static/images/cover.jpg` referenced historically but missing).
 - `public/` is tracked in git from the old setup; the CSS bundles and processed images are now
-  ignored, the rest could be `git rm --cached` once confirmed Cloudflare builds from source.
+  ignored, the rest could be `git rm --cached` (confirmed 2026-10-25: Cloudflare builds from source).
 - Mobile layout verified only via CSS breakpoints, not on a device.
