@@ -94,8 +94,11 @@ static/                 favicons, images/projects/*.svg (recent project thumbnai
 scripts/                fetch_youtube.ym, fetch_github_repos.py
 ```
 
-Blowfish is loaded as a Go module (`go.mod` pins v2.90.0). Do not run bare `hugo mod get` —
-it upgrades Blowfish past what Hugo 0.151 supports. Pin with
+Blowfish is loaded as a Hugo module only (`config/_default/module.toml` + `go.mod` pinning v2.90.0).
+There is no `themes/` directory and no `theme =` line in `config.toml`; keep it that way. A stale
+`themes/blowfish` submodule pointer without `.gitmodules` broke every Cloudflare build until 2026-10-25
+("error occurred while updating repository submodules" at clone time).
+Do not run bare `hugo mod get` — it upgrades Blowfish past what Hugo 0.151 supports. Pin with
 `hugo mod get github.com/nunocoracao/blowfish/v2@v2.90.0` if it drifts.
 
 ---
