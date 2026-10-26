@@ -118,9 +118,16 @@ Do not run bare `hugo mod get` — it upgrades Blowfish past what Hugo 0.151 sup
 
 ```bash
 hugo server -D            # http://localhost:1313  (Hugo 0.151.0 ext in ~/.local/bin, Go via mise)
-./build.sh                # what Cloudflare runs: hugo --gc --minify → ./public/
-wrangler deploy           # Cloudflare Workers (wrangler.toml)
+./build.sh                # what Cloudflare runs: installs Hugo EXTENDED 0.151.0, hugo --gc --minify → ./public/
 ```
+
+Deploy is automatic: a push to GitHub `main` triggers Cloudflare Workers Builds, which runs
+`npx wrangler deploy`; wrangler runs `./build.sh` (`[build] command` in `wrangler.toml`) and uploads
+`./public`. Hugo **extended** is required because `profile-image.html` writes WebP; the standard binary
+fails with "error calling Fill: this feature is not available in your current Hugo version". A local
+build can hide that behind the `resources/_gen/` cache, so verify in a fresh clone. Build status: the
+"Workers Builds: elikesbikes" check on the GitHub commit; logs via the Cloudflare builds API (see the
+elikesbikes-website skill).
 
 Hugo server must be restarted after adding a new top-level directory (e.g. `assets/`) — the
 watcher only follows directories that existed at startup.
