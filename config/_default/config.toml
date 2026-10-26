@@ -1,7 +1,7 @@
 baseURL = "https://elikesbikes.com/"
 languageCode = "en"
 title = "elikesbikes"
-theme = "blowfish"
+# Blowfish is loaded as a Hugo module (config/_default/module.toml + go.mod); no themes/ dir.
 defaultContentLanguage = "en"
 
 # Enable tags for Topics page
