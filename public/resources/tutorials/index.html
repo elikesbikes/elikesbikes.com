@@ -18,7 +18,7 @@
     <meta name="title" content="tutorials &middot; elikesbikes">
 
   
-  <meta name="description" content="Reference configs, starter templates, and working examples across Docker, Linux, networking, IoT, and more.">
+  <meta name="description" content="Working Docker Compose stacks, the Traefik edge, and the scripts and pipeline that deploy them across my homelab.">
   
   
   
@@ -101,14 +101,14 @@
   <meta property="og:url" content="http://localhost:1313/resources/tutorials/">
   <meta property="og:site_name" content="elikesbikes">
   <meta property="og:title" content="tutorials">
-  <meta property="og:description" content="Reference configs, starter templates, and working examples across Docker, Linux, networking, IoT, and more.">
+  <meta property="og:description" content="Working Docker Compose stacks, the Traefik edge, and the scripts and pipeline that deploy them across my homelab.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="tutorials">
-  <meta name="twitter:description" content="Reference configs, starter templates, and working examples across Docker, Linux, networking, IoT, and more.">
+  <meta name="twitter:description" content="Working Docker Compose stacks, the Traefik edge, and the scripts and pipeline that deploy them across my homelab.">
 
   
 
@@ -586,8 +586,8 @@
   <header class="single-head repo-head">
     <p class="single-meta mono">Repository</p>
     <h1 class="page-title">tutorials</h1>
-    <p class="page-desc">Reference configs, starter templates, and working examples across Docker, Linux, networking, IoT, and more.</p>
-    <div class="pills"><span class="pill pill-data">Docker</span><span class="pill pill-data">Linux</span><span class="pill pill-data">Proxmox</span><span class="pill pill-data">Networking</span><span class="pill pill-data">ESP32</span><span class="pill pill-data">Ansible</span></div>
+    <p class="page-desc">Working Docker Compose stacks, the Traefik edge, and the scripts and pipeline that deploy them across my homelab.</p>
+    <div class="pills"><span class="pill pill-data">Docker</span><span class="pill pill-data">Traefik</span><span class="pill pill-data">GitLab CI</span><span class="pill pill-data">Shell</span><span class="pill pill-data">Python</span></div>
     
     <p class="single-links"><a class="btn btn-accent" href="https://github.com/elikesbikes/tutorials" target="_blank" rel="noopener">
       <svg width="14" height="14" aria-hidden="true" focusable="false" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub ↗
@@ -601,52 +601,27 @@
   <div class="grid grid-folders">
     <a class="card folder" href="/resources/tutorials/docker-compose/">
       <span class="folder-name">docker-compose</span>
-      <span class="folder-desc">44 production-ready Docker Compose stacks — Traefik, Nextcloud, Graylog, n8n, Jellyfin, Wazuh, and more.</span>
+      <span class="folder-desc">51 production-ready Docker Compose stacks — Nextcloud, Graylog, n8n, Jellyfin, Wazuh, GitLab, Immich, and more.</span>
       <span class="folder-cta mono">View details →</span>
     </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/linux" target="_blank" rel="noopener">
-      <span class="folder-name">linux</span>
-      <span class="folder-desc">Linux command references and configs — bash, docker, grep, sed, rsyslog, Starship, and more.</span>
+    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/infra" target="_blank" rel="noopener">
+      <span class="folder-name">infra</span>
+      <span class="folder-desc">The Traefik reverse-proxy project: env-driven, multi-host (tars, rocky, hailmary), Cloudflare DNS-01 TLS.</span>
       <span class="folder-cta mono">Open in GitHub ↗</span>
     </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/proxmox" target="_blank" rel="noopener">
-      <span class="folder-name">proxmox</span>
-      <span class="folder-desc">Proxmox setup and configuration guides.</span>
+    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/infra-snapshots" target="_blank" rel="noopener">
+      <span class="folder-name">infra-snapshots</span>
+      <span class="folder-desc">Captured Traefik snapshots used to verify a host before and after a deploy.</span>
       <span class="folder-cta mono">Open in GitHub ↗</span>
     </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/network" target="_blank" rel="noopener">
-      <span class="folder-name">network</span>
-      <span class="folder-desc">Networking configs for pfSense, Cisco ISR, Tailscale, multicast, and zero-trust setups.</span>
+    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/scripts" target="_blank" rel="noopener">
+      <span class="folder-name">scripts</span>
+      <span class="folder-desc">Deploy, sync, snapshot and validate helpers — validate-compose.sh, sync-traefik.sh, traefik_smoke.py, deploy-endurance.sh.</span>
       <span class="folder-cta mono">Open in GitHub ↗</span>
     </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/nextcloud" target="_blank" rel="noopener">
-      <span class="folder-name">nextcloud</span>
-      <span class="folder-desc">Nextcloud deployment and configuration references.</span>
-      <span class="folder-cta mono">Open in GitHub ↗</span>
-    </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/esp32-arduino" target="_blank" rel="noopener">
-      <span class="folder-name">esp32-arduino</span>
-      <span class="folder-desc">ESP32 and Arduino projects — camera streaming, RTSP, SwitchBot, MQTT, and BLE libraries.</span>
-      <span class="folder-cta mono">Open in GitHub ↗</span>
-    </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/Obsidian" target="_blank" rel="noopener">
-      <span class="folder-name">Obsidian</span>
-      <span class="folder-desc">Obsidian vault templates — logs, projects, books, recipes, meetings, and more.</span>
-      <span class="folder-cta mono">Open in GitHub ↗</span>
-    </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/linode" target="_blank" rel="noopener">
-      <span class="folder-name">linode</span>
-      <span class="folder-desc">Linode-hosted service configs including Nextcloud and Uptime Kuma.</span>
-      <span class="folder-cta mono">Open in GitHub ↗</span>
-    </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/windows" target="_blank" rel="noopener">
-      <span class="folder-name">windows</span>
-      <span class="folder-desc">Windows Server setup — Active Directory, WSL2 SSH, and initial server config.</span>
-      <span class="folder-cta mono">Open in GitHub ↗</span>
-    </a>
-    <a class="card folder" href="https://github.com/elikesbikes/tutorials/tree/main/AI" target="_blank" rel="noopener">
-      <span class="folder-name">AI</span>
-      <span class="folder-desc">AI-related references and experiments.</span>
+    <a class="card folder" href="https://github.com/elikesbikes/tutorials/blob/main/PIPELINE.md" target="_blank" rel="noopener">
+      <span class="folder-name">PIPELINE.md</span>
+      <span class="folder-desc">How the GitLab CI pipeline validates and deploys stacks: tars edits → rocky (dev) → hailmary (prod).</span>
       <span class="folder-cta mono">Open in GitHub ↗</span>
     </a>
     
