@@ -1,0 +1,13 @@
+{{- /* Social link row. Usage: partial "social-links.html" (dict "variant" "chips"|"cards") */ -}}
+{{- $variant := .variant | default "chips" -}}
+<div class="social social-{{ $variant }}">
+  {{- range site.Data.social }}
+  <a class="social-link" href="{{ .url }}" target="_blank" rel="noopener" style="--brand: {{ .color }};">
+    <span class="social-icon">{{ partial "brand-icon.html" (dict "name" .icon "color" .color "size" (cond (eq $variant "cards") 22 16)) }}</span>
+    <span class="social-text">
+      <span class="social-name">{{ .name }}</span>
+      {{- if eq $variant "cards" }}<span class="social-handle">{{ .handle }}</span>{{ end }}
+    </span>
+  </a>
+  {{- end }}
+</div>

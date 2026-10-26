@@ -1,0 +1,24 @@
+{{- /* One video card. Context: a video page. Thumbnails and titles open YouTube directly. */ -}}
+{{- $id := .Params.youtube_id -}}
+{{- $yt := printf "https://www.youtube.com/watch?v=%s" $id -}}
+<article class="card vcard">
+  <a class="vcard-thumb" href="{{ $yt }}" target="_blank" rel="noopener" aria-label="Watch {{ .Title }} on YouTube">
+    <img src="https://img.youtube.com/vi/{{ $id }}/maxresdefault.jpg" alt=""
+         loading="lazy" decoding="async"
+         onerror="this.onerror=null;this.src='https://img.youtube.com/vi/{{ $id }}/hqdefault.jpg'"
+         onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://img.youtube.com/vi/{{ $id }}/hqdefault.jpg'}">
+    <span class="vcard-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg></span>
+  </a>
+  <div class="vcard-body">
+    <div class="vcard-meta mono">
+      <span class="when">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <a class="vcard-page" href="{{ .RelPermalink }}" title="Open on this site">details →</a>
+    </div>
+    <h3 class="vcard-title"><a href="{{ $yt }}" target="_blank" rel="noopener">{{ .Title }}</a></h3>
+    {{- with .Params.tags }}
+    <div class="pills">
+      {{- range . }}<a class="pill" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+</article>

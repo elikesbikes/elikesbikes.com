@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="page">
+  <a class="back mono" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+  <header class="page-head"><div>
+    <p class="single-meta mono">{{ .Data.Singular }}</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p class="page-sub mono">{{ len .Pages }} {{ if eq (len .Pages) 1 }}item{{ else }}items{{ end }}</p>
+  </div></header>
+  {{- $videos := where .Pages "Section" "videos" -}}
+  {{- $other := where .Pages "Section" "!=" "videos" -}}
+  {{ with $videos }}<div class="grid grid-videos">{{ range .ByDate.Reverse }}{{ partial "video-card.html" . }}{{ end }}</div>{{ end }}
+  {{ with $other }}<div class="rows">{{ range .ByDate.Reverse }}<a class="row" href="{{ .RelPermalink }}"><span class="when mono">{{ .Date.Format "2006-01-02" }}</span><span>{{ .Title }}</span></a>{{ end }}</div>{{ end }}
+</div>
+{{ end }}

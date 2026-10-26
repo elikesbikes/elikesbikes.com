@@ -1,7 +1,6 @@
 ---
 title: "Welcome to ElikesBikes"
 description: "Cycling Videos, Tech Educational Documents, and adventures by Tars."
-image: "/images/cover.jpg"
 recent_project:
   name: "n8n"
   description: "Visual workflow automation with integrations for Garmin, Graylog, Home Assistant, Proxmox, and Unifi."

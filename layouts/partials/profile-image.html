@@ -1,0 +1,10 @@
+{{- /* Square-cropped, resized profile photo from assets/images/profile.jpg.
+       Usage: partial "profile-image.html" (dict "size" 160 "alt" "Emmanuel Loaiza") */ -}}
+{{- $size := .size | default 160 -}}
+{{- $alt := .alt | default site.Params.author.name -}}
+{{- with resources.Get "images/profile.jpg" -}}
+  {{- $one := .Fill (printf "%dx%d Center webp q88" $size $size) -}}
+  {{- $two := .Fill (printf "%dx%d Center webp q82" (mul $size 2) (mul $size 2)) -}}
+  <img class="avatar" src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x"
+       width="{{ $size }}" height="{{ $size }}" alt="{{ $alt }}" loading="eager" decoding="async">
+{{- end -}}

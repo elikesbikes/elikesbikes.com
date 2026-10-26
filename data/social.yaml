@@ -1,0 +1,27 @@
+# Social links rendered by layouts/partials/social-links.html (home + about).
+# icon = file name in assets/icons/ (Simple Icons SVG). color = brand hover/icon color.
+- name: YouTube
+  handle: "@ELIKESBIKES"
+  url: https://youtube.com/@ELIKESBIKES
+  icon: youtube
+  color: "#ff4444"
+- name: GitHub
+  handle: elikesbikes
+  url: https://github.com/elikesbikes
+  icon: github
+  color: "#e6e8ec"
+- name: Discord
+  handle: Join the community
+  url: https://elikesbikes.com/discord
+  icon: discord
+  color: "#5865f2"
+- name: Strava
+  handle: Rides and races
+  url: https://www.strava.com/athletes/1013247
+  icon: strava
+  color: "#fc4c02"
+- name: TrainerRoad
+  handle: Training
+  url: https://www.trainerroad.com/app/career/elikesbikes
+  icon: trainerroad
+  color: "#e85d04"

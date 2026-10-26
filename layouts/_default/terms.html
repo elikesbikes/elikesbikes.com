@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="page page-narrow">
+  <header class="page-head"><div>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p class="page-sub mono">{{ len .Data.Terms }} {{ .Title | lower }}</p>
+  </div></header>
+  <div class="pills pills-lg">
+    {{ range .Data.Terms.ByCount }}<a class="pill" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<span class="count">{{ .Count }}</span></a>{{ end }}
+  </div>
+</div>
+{{ end }}

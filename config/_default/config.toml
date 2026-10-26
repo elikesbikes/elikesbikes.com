@@ -1,6 +1,6 @@
 baseURL = "https://elikesbikes.com/"
 languageCode = "en"
-title = "Emmanuel Loaiza (tars)"
+title = "elikesbikes"
 theme = "blowfish"
 defaultContentLanguage = "en"
 
@@ -12,6 +12,5 @@ defaultContentLanguage = "en"
 buildDrafts = true
 buildFuture = true
 
-# You can tweak site metadata later here
 [params]
   mainSections = ["videos"]

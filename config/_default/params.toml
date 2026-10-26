@@ -1,39 +1,23 @@
-# Blowfish theme parameters
+# Blowfish theme parameters — see https://blowfish.page/docs/configuration/
+# Look: Interstellar console theme (dark only). Scheme in assets/css/schemes/interstellar.css,
+# everything else in assets/css/custom.css.
+colorScheme = "interstellar"
+defaultAppearance = "dark"
+autoSwitchAppearance = false
 enableSearch = true
+disableImageZoom = true
 
-# Keep your background color
-background = "#0f1720"
-
-# Optional light background color (if you want dark/light toggle later)
-lightBackground = "#f8fafc"
-
-# Site identity
-[author]
-  name = "Eli"
-  headline = "Tech, Bikes, and Learning"
-  bio = "I share educational videos about tech, programming, and tools I use every day."
-  image = "images/profile.jpg" # already in your repo
-
-# Header behavior
 [header]
-  layout = "fixed"      # fixed header at top
-  showTitle = true
-  showLogo = true
-  showNav = true
+  layout = "fixed"
 
-# Footer options (you can expand later)
 [footer]
   showCopyright = true
-  showSocial = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = false
+  showScrollToTop = true
 
-# Social links — update these later with your own handles
-[[social]]
-  name = "YouTube"
-  url = "https://www.youtube.com/@elikesbikes"
-  icon = "youtube"
+[taxonomy]
+  showTermCount = true
 
-[[social]]
-  name = "GitHub"
-  url = "https://github.com/elikesbikes"
-  icon = "github"
-
+[term]
+  cardView = false

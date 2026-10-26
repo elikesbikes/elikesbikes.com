@@ -1,0 +1,10 @@
+{{- /* Inline a Simple Icons SVG from assets/icons/<name>.svg.
+       Usage: partial "brand-icon.html" (dict "name" "youtube" "color" "#ff4444" "size" 18) */ -}}
+{{- $name := .name -}}
+{{- $size := .size | default 18 -}}
+{{- with resources.Get (printf "icons/%s.svg" $name) -}}
+  {{- $svg := .Content | replaceRE `<title>[^<]*</title>` "" -}}
+  {{- with $.color -}}{{- $svg = replaceRE `fill="#[0-9A-Fa-f]{3,6}"` (printf `fill="%s"` .) $svg -}}{{- end -}}
+  {{- $svg = replaceRE `<svg ` (printf `<svg width="%v" height="%v" aria-hidden="true" focusable="false" ` $size $size) $svg -}}
+  {{- $svg | safeHTML -}}
+{{- end -}}

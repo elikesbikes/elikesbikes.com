@@ -9,24 +9,29 @@
   weight = 30
 
 [[main]]
-  name = "homelab"
+  name = "Homelab"
   pageRef = "resources/homelab"
   parent = "Resources"
   weight = 31
 
 [[main]]
-  name = "tutorials"
+  name = "Tutorials"
   pageRef = "resources/tutorials"
   parent = "Resources"
   weight = 32
 
 [[main]]
-  name = "linux_dotfiles"
+  name = "Linux Dotfiles"
   pageRef = "resources/linux_dotfiles"
   parent = "Resources"
   weight = 33
 
 [[main]]
-  name = "About Me"
+  name = "Tags"
+  pageRef = "tags"
+  weight = 35
+
+[[main]]
+  name = "About"
   pageRef = "about"
   weight = 40

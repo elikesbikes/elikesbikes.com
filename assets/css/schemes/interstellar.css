@@ -1,0 +1,38 @@
+/* Interstellar scheme for Blowfish — maps the theme's neutral/primary/secondary
+   ladders onto the Interstellar console palette (bg #06080b · panel #161a21 ·
+   raised #212731 · border #2b313b · amber #f0a23b · data #9fc4e8). Dark only. */
+:root {
+  --color-neutral: 230, 232, 236;          /* text #e6e8ec */
+  --color-neutral-50: 246, 247, 248;
+  --color-neutral-100: 230, 232, 236;
+  --color-neutral-200: 200, 204, 212;
+  --color-neutral-300: 170, 176, 186;
+  --color-neutral-400: 138, 144, 156;      /* muted #8a909c */
+  --color-neutral-500: 110, 117, 130;
+  --color-neutral-600: 43, 49, 59;         /* border #2b313b */
+  --color-neutral-700: 33, 39, 49;         /* raised #212731 */
+  --color-neutral-800: 6, 8, 11;           /* bg #06080b */
+  --color-neutral-900: 3, 4, 6;
+  /* Amber — accent */
+  --color-primary-50: 254, 247, 235;
+  --color-primary-100: 252, 236, 208;
+  --color-primary-200: 249, 219, 165;
+  --color-primary-300: 245, 196, 118;
+  --color-primary-400: 240, 162, 59;       /* accent #f0a23b */
+  --color-primary-500: 224, 142, 42;
+  --color-primary-600: 184, 119, 35;       /* accent-dim #b87723 */
+  --color-primary-700: 148, 96, 27;
+  --color-primary-800: 112, 72, 20;
+  --color-primary-900: 77, 49, 12;
+  /* Cold blue-white — data */
+  --color-secondary-50: 243, 248, 253;
+  --color-secondary-100: 230, 240, 250;
+  --color-secondary-200: 208, 226, 245;
+  --color-secondary-300: 185, 212, 240;
+  --color-secondary-400: 159, 196, 232;    /* data #9fc4e8 */
+  --color-secondary-500: 125, 170, 215;
+  --color-secondary-600: 95, 145, 195;
+  --color-secondary-700: 70, 115, 165;
+  --color-secondary-800: 50, 88, 130;
+  --color-secondary-900: 35, 62, 95;
+}

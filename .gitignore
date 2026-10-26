@@ -1,0 +1,10 @@
+# Hugo build output and caches (public/ is rebuilt by build.sh on Cloudflare;
+# legacy tracked copies are left in history until removed with git rm --cached)
+resources/_gen/
+.hugo_build.lock
+hugo_stats.json
+public/css/main.bundle.min.*.css
+public/images/*_hu_*.webp
+# Local scratch
+*.bak
+.DS_Store
