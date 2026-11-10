@@ -1,7 +1,7 @@
 # CLAUDE.md — elikesbikes.com
 
 Project context and conventions for AI-assisted development on this site.
-Revision: 2026-10-25 (Interstellar restyle, repo moved to ~/devops/projects, GitLab mirror).
+Revision: 2026-11-09 (static/mcc/avatars: MCC Discord post pictures). Previous: 2026-10-25 (Interstellar restyle, repo moved to ~/devops/projects, GitLab mirror).
 
 ---
 
@@ -91,6 +91,11 @@ layouts/
     extend-head.html    Fonts + dark lock
 
 static/                 favicons, images/projects/*.svg (recent project thumbnails)
+  mcc/avatars/*.png     Pictures MCC's Discord posts show (one per agent). Not part of the site's pages:
+                        Discord downloads them from https://elikesbikes.com/mcc/avatars/<slug>.png, so they
+                        must stay at these paths. Source SVGs and the export command live in the MCC repo
+                        (shared/discord_avatars/, docs/discord.md); MCC's registry check `discord-avatars`
+                        alerts if one stops loading. Added 2026-11-09.
 scripts/                fetch_youtube.ym, fetch_github_repos.py
 ```
 
