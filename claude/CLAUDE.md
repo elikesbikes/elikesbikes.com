@@ -1,7 +1,7 @@
 # CLAUDE.md — elikesbikes.com
 
 Project context and conventions for AI-assisted development on this site.
-Revision: 2026-11-09 (static/mcc/avatars: MCC Discord post pictures). Previous: 2026-10-25 (Interstellar restyle, repo moved to ~/devops/projects, GitLab mirror).
+Revision: 2026-11-18 (elegance pass inside the Interstellar theme; see Revision history at the end). Previous: 2026-11-09 (static/mcc/avatars: MCC Discord post pictures).
 
 ---
 
@@ -20,6 +20,19 @@ Stack: **Hugo** (v0.151.0 extended) + **Blowfish theme** (v2.90.0, Go module) + 
 `gitlab.home.elikesbikes.com/ecloaiza/elikesbikes.com` (secondary mirror). Commit with
 `gacp_elikesbikes "message"`; Claude Code hooks auto-commit after edits.
 
+**Every commit here is a production deploy, and the hooks commit on their own.** A PostToolUse hook
+(after each Edit/Write to a file in this folder) and a Stop hook (when any Claude session on this machine
+ends a turn) run `gacp_elikesbikes`, which pushes `main`, which Cloudflare builds and publishes. So:
+
+- **Never run `hugo server` or `hugo` inside this folder while working.** Both write into `public/`, which
+  is still tracked, and the next hook pushes it. On 2026-11-18 a preview server did exactly that: commit
+  3d8f583 put dev-server pages (localhost URLs, livereload) into the tracked `public/` (production was not
+  affected, Cloudflare rebuilds from source).
+- **Multi-file changes: work in a copy, land once.** `rsync -a --exclude .git --exclude public` the repo to
+  a scratch folder, edit and preview there (`hugo server --renderToMemory`), then copy the finished files
+  back with one shell command that ends in `gacp_elikesbikes "message"`. One commit, one deploy, nothing
+  half-finished live.
+
 ---
 
 ## Look: Interstellar console theme (dark only)
@@ -30,7 +43,12 @@ The site uses the owner's "Interstellar" theme, shared with MCC/Cooper. Never in
   (dim `#b87723`) · data blue `#9fc4e8` · teal `#5fb3a1` · text `#e6e8ec` · muted `#8a909c`.
 - Type: **Inter** for prose; **IBM Plex Mono** uppercase + wide tracking for labels, dates, tags, nav, buttons.
 - Wordmark `ELIKESBIKES` in amber mono with glow (site title, styled by CSS).
-- Faint amber/blue radial glows on body; blurred fixed header; cards lift + amber border on hover.
+- Faint amber/blue radial glows (a fixed, viewport-sized `body::before` layer, so they never show the edge
+  of Blowfish's 1280px column); blurred fixed header; cards lift + amber border and glow on hover.
+- Details added 2026-11-18, all in `custom.css`: the header sits on the same column as the page content at
+  every width; the current section is underlined in the nav; section labels are an amber dash, the label
+  and a hairline that fades out; the rule under a page title starts with a short amber segment; page
+  content rises in once on load (off under `prefers-reduced-motion`); long text is capped near 68 characters.
 
 Where it lives:
 
@@ -39,10 +57,14 @@ Where it lives:
 | `assets/css/schemes/interstellar.css` | Blowfish color scheme (neutral/primary/secondary ladders → Interstellar) |
 | `assets/css/custom.css` | Everything else: tokens, fonts, Blowfish overrides, all component classes |
 | `layouts/partials/extend-head.html` | Google Fonts (Inter, IBM Plex Mono), theme-color, forces `dark` class |
+| `layouts/partials/extend-footer.html` | Tiny script: sets `aria-current` on the nav links of the current section (Blowfish renders no active state) |
 | `config/_default/params.toml` | `colorScheme = "interstellar"`, `defaultAppearance = "dark"`, switcher off |
 
 **No inline styles in layouts.** Use the classes in `custom.css` (`.page`, `.page-head`, `.card`,
-`.card-title`, `.pill`, `.btn`, `.section-head`, `.mono`, `.when`, grids `.grid-videos` etc.).
+`.card-title`, `.pill`, `.btn`, `.btn-row`, `.section-head`, `.mono`, `.when`, grids `.grid-videos` etc.).
+Helper tokens next to the theme colors: `--prose` (body copy), `--hairline` (dividers inside a surface),
+`--glow` (accent as `r, g, b` for `rgba()`), `--ease-out`. Blowfish's utilities are in `@layer utilities`,
+so plain rules in `custom.css` already win; add `!important` only where Blowfish uses it too.
 
 ---
 
@@ -73,24 +95,29 @@ content/
   search/_index.md      layout: "search" (required by Blowfish search)
 
 layouts/
-  index.html            Home: hero (avatar, name, headline, stats), bio, social chips, recent project, latest 3 videos
+  index.html            Home: hero (avatar, name, headline, stats), bio, social chips, recent project
+                        (picture beside the words; stacked under 820px), latest 3 videos
+  404.html              "Page not found" in the site's look (Cloudflare serves it: wrangler.toml not_found_handling)
   videos/list.html      Header + video grid
   videos/single.html    Embedded player (youtube-nocookie), tags link to /tags/
   repo/list.html        Repo header, tech pills, GitHub button, folder grid
   resources/list.html   Repo cards
-  about/list.html       Hero + bio sections + social cards
+  about/list.html       Hero + bio sections (label column beside the text) + social tiles
   _default/list.html    Generic list (rows)
   _default/terms.html   /tags/ as pill cloud with counts
   _default/term.html    /tags/<tag>/ reuses the video grid
   partials/
     video-card.html     One video card (maxresdefault thumb with hqdefault fallback)
     social-links.html   Renders data/social.yaml ("chips" or "cards" variant)
+    headline.html       Author headline split on " · " into spans: one line on wide screens, one phrase per line on phones
+    extend-footer.html  Marks the current section in the nav (aria-current)
     brand-icon.html     Inlines assets/icons/<name>.svg with optional color/size
     profile-image.html  Processed avatar (Fill, webp, 1x/2x)
     favicons.html       Favicon override (Blowfish checks for this partial first)
     extend-head.html    Fonts + dark lock
 
-static/                 favicons, images/projects/*.svg (recent project thumbnails)
+static/                 favicons, images/projects/*.svg (recent project thumbnails, drawn in the Interstellar
+                        palette; shown through <img>, so text inside them falls back to the system monospace)
   mcc/avatars/*.png     Pictures MCC's Discord posts show (one per agent). Not part of the site's pages:
                         Discord downloads them from https://elikesbikes.com/mcc/avatars/<slug>.png, so they
                         must stay at these paths. Source SVGs and the export command live in the MCC repo
@@ -122,9 +149,13 @@ Do not run bare `hugo mod get` — it upgrades Blowfish past what Hugo 0.151 sup
 ## Local Development
 
 ```bash
-hugo server -D            # http://localhost:1313  (Hugo 0.151.0 ext in ~/.local/bin, Go via mise)
-./build.sh                # what Cloudflare runs: installs Hugo EXTENDED 0.151.0, hugo --gc --minify → ./public/
+# In a scratch COPY of the repo, never in this folder (see "Every commit here is a production deploy"):
+hugo server --renderToMemory   # http://localhost:1313  (Hugo 0.151.0 ext in ~/.local/bin, Go via mise)
+./build.sh                     # what Cloudflare runs: installs Hugo EXTENDED 0.151.0, hugo --gc --minify → ./public/
 ```
+
+Open the preview as `localhost:1313`, not `127.0.0.1:1313`: search loads its index from the base URL and
+the browser blocks it across the two names.
 
 Deploy is automatic: a push to GitHub `main` triggers Cloudflare Workers Builds, which runs
 `npx wrangler deploy`; wrangler runs `./build.sh` (`[build] command` in `wrangler.toml`) and uploads
@@ -144,4 +175,18 @@ watcher only follows directories that existed at startup.
 - No Open Graph image yet (`static/images/cover.jpg` referenced historically but missing).
 - `public/` is tracked in git from the old setup; the CSS bundles and processed images are now
   ignored, the rest could be `git rm --cached` (confirmed 2026-10-25: Cloudflare builds from source).
-- Mobile layout verified only via CSS breakpoints, not on a device.
+- Mobile layout verified in headless Chromium at 390, 500, 700, 820 and 900px (2026-11-18), not on a real
+  phone; Safari and Firefox not checked.
+- Every build logs `WARN Module "github.com/nunocoracao/blowfish/v2" is not compatible with this Hugo
+  version: 0.141.0/0.150.0 extended`: Blowfish v2.90.0 declares Hugo 0.150.0 as its newest, the site builds
+  with 0.151.0. Blowfish v2.91.0 declares 0.151.0 (its `config.toml`), untested here. In the Findings Backlog.
+
+---
+
+## Revision history
+
+| Date | Commit | Change |
+|---|---|---|
+| 2026-10-25 | b825b35 | Interstellar restyle; repo moved to `~/devops/projects`; GitLab mirror. |
+| 2026-11-09 | b4bc5e3 | `static/mcc/avatars`: MCC Discord post pictures. |
+| 2026-11-18 | (this commit) | Elegance pass, theme unchanged: glow layer without seams, header on the content column, current section marked in the nav, section labels with a rule, home project card with the picture beside the words and the n8n picture redrawn in the palette (its labels no longer overlap the icons), about page with a label column and a single row of social tiles, headline that wraps by phrase, video cards with tags on one line across a row, amber search focus, own 404 page, entrance motion. Tested: production build (61 pages, same single Blowfish warning as before); headless Chromium screenshots of every page type at 1440px plus 390-900px; dropdown, search, phone menu, card hover, scrolled header; no horizontal scroll and no script errors. Not tested: real phones, Safari, Firefox. |

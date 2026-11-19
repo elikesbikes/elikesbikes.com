@@ -1,0 +1,11 @@
+{{/* Marks the nav link(s) of the current section with aria-current so custom.css can show
+     where you are. Blowfish's header has no active state. No script, no marker: nothing breaks. */}}
+<script>
+(function () {
+  var path = location.pathname;
+  document.querySelectorAll(".main-menu a[href], #menu-wrapper a[href]").forEach(function (a) {
+    var href = a.getAttribute("href");
+    if (href && href !== "/" && path.indexOf(href) === 0) a.setAttribute("aria-current", path === href ? "page" : "true");
+  });
+})();
+</script>

@@ -1,135 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="n8n in the middle, wired to Graylog, Home Assistant, Proxmox, Garmin and UniFi">
+  <!-- Recent-project picture for the home page, drawn in the Interstellar palette:
+       bg #06080b, panel #161a21, border #2b313b, amber #f0a23b, data #9fc4e8, text #e6e8ec, muted #8a909c.
+       Loaded through <img>, so it cannot use the page's web fonts; the stack below falls back to the system monospace. -->
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f1720"/>
-      <stop offset="100%" style="stop-color:#111b2a"/>
-    </linearGradient>
-    <linearGradient id="n8nGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#EA4B71;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#EA4B71;stop-opacity:0"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <radialGradient id="hubGlow">
+      <stop offset="0" stop-color="#f0a23b" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#f0a23b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#161a21" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
     </filter>
-    <filter id="softglow">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#2d3748"/>
-    </marker>
   </defs>
+  <style>
+    text { font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+    .label { font-size: 15px; font-weight: 500; letter-spacing: 1.5px; fill: #e6e8ec; text-anchor: middle; }
+    .tag { font-size: 13px; letter-spacing: 2.6px; fill: #8a909c; }
+    .node { fill: #161a21; stroke: #2b313b; stroke-width: 1.2; }
+    .ico { fill: none; stroke: #9fc4e8; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .ico-dot { fill: #9fc4e8; }
+    .wire { stroke: #2b313b; stroke-width: 1.2; stroke-dasharray: 4 5; }
+    .flow { fill: #f0a23b; }
+    @media (prefers-reduced-motion: reduce) { .flow { display: none; } }
+  </style>
 
-  <!-- Background -->
-  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="#06080b"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <circle cx="400" cy="225" r="180" fill="url(#hubGlow)"/>
 
-  <!-- Subtle grid -->
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2535" stroke-width="0.5"/>
-  </pattern>
-  <rect width="800" height="450" fill="url(#grid)" opacity="0.6"/>
+  <!-- corner readouts -->
+  <rect x="28" y="27" width="6" height="6" fill="#f0a23b"/>
+  <text class="tag" x="44" y="35">HOMELAB</text>
+  <text class="tag" x="772" y="35" text-anchor="end">5 INTEGRATIONS</text>
+  <text class="tag" x="401" y="420" text-anchor="middle">VISUAL WORKFLOW AUTOMATION</text>
 
-  <!-- n8n center glow -->
-  <circle cx="400" cy="225" r="90" fill="url(#n8nGlow)"/>
-
-  <!-- Connection lines (behind nodes) -->
-  <!-- n8n to Home Assistant -->
-  <line x1="400" y1="225" x2="185" y2="150" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
-  <!-- n8n to Garmin -->
-  <line x1="400" y1="225" x2="185" y2="310" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
-  <!-- n8n to Proxmox -->
-  <line x1="400" y1="225" x2="615" y2="150" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
-  <!-- n8n to Unifi -->
-  <line x1="400" y1="225" x2="615" y2="310" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
-  <!-- n8n to Graylog -->
-  <line x1="400" y1="225" x2="400" y2="55" stroke="#2d3748" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
-
-  <!-- Animated data flow dots on lines -->
-  <!-- Top -->
-  <circle r="3" fill="#EA4B71" opacity="0.8">
-    <animateMotion dur="2.5s" repeatCount="indefinite" path="M400,225 L400,55"/>
-  </circle>
-  <!-- Left-top -->
-  <circle r="3" fill="#EA4B71" opacity="0.8">
-    <animateMotion dur="3s" repeatCount="indefinite" path="M400,225 L185,150"/>
-  </circle>
-  <!-- Left-bottom -->
-  <circle r="3" fill="#EA4B71" opacity="0.8">
-    <animateMotion dur="3.5s" repeatCount="indefinite" path="M400,225 L185,310"/>
-  </circle>
-  <!-- Right-top -->
-  <circle r="3" fill="#EA4B71" opacity="0.8">
-    <animateMotion dur="2.8s" repeatCount="indefinite" path="M400,225 L615,150"/>
-  </circle>
-  <!-- Right-bottom -->
-  <circle r="3" fill="#EA4B71" opacity="0.8">
-    <animateMotion dur="3.2s" repeatCount="indefinite" path="M400,225 L615,310"/>
-  </circle>
-
-  <!-- === n8n CENTER NODE === -->
-  <rect x="340" y="185" width="120" height="80" rx="12" fill="#1a2535" stroke="#EA4B71" stroke-width="2" filter="url(#softglow)"/>
-  <!-- n8n logo text -->
-  <text x="400" y="222" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="28" fill="#EA4B71" filter="url(#glow)">n8n</text>
-  <text x="400" y="245" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="10" fill="#8892a4" letter-spacing="2">WORKFLOW</text>
-
-  <!-- === HOME ASSISTANT NODE (top-left) === -->
-  <rect x="125" y="110" width="120" height="80" rx="10" fill="#1a2535" stroke="#2d3748" stroke-width="1.5"/>
-  <!-- HA icon - simplified house -->
-  <g transform="translate(157, 128)">
-    <polygon points="28,0 56,24 52,24 52,52 32,52 32,36 24,36 24,52 4,52 4,24 0,24" fill="#03a9f4" opacity="0.9"/>
-    <rect x="20" y="30" width="16" height="22" fill="#1a2535"/>
+  <!-- wires, hub to each service (the boxes drawn later cover the ends) -->
+  <g class="wire">
+    <line x1="400" y1="225" x2="400" y2="64"/>
+    <line x1="400" y1="225" x2="128" y2="142"/>
+    <line x1="400" y1="225" x2="672" y2="142"/>
+    <line x1="400" y1="225" x2="128" y2="310"/>
+    <line x1="400" y1="225" x2="672" y2="310"/>
   </g>
-  <text x="185" y="177" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e6edf3">Home Assistant</text>
 
-  <!-- === GARMIN NODE (bottom-left) === -->
-  <rect x="125" y="270" width="120" height="80" rx="10" fill="#1a2535" stroke="#2d3748" stroke-width="1.5"/>
-  <!-- Garmin icon - simplified activity watch -->
-  <g transform="translate(163, 288)">
-    <circle cx="22" cy="26" r="20" fill="none" stroke="#00b3e3" stroke-width="3"/>
-    <circle cx="22" cy="26" r="14" fill="#0d1117"/>
-    <polyline points="22,16 22,26 30,30" stroke="#00b3e3" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- data moving out along the wires -->
+  <g class="flow">
+    <circle r="2.6"><animateMotion dur="2.6s" repeatCount="indefinite" path="M400,225 L400,64"/></circle>
+    <circle r="2.6"><animateMotion dur="3.4s" begin="-1.2s" repeatCount="indefinite" path="M400,225 L128,142"/></circle>
+    <circle r="2.6"><animateMotion dur="3.1s" begin="-0.6s" repeatCount="indefinite" path="M400,225 L672,142"/></circle>
+    <circle r="2.6"><animateMotion dur="3.7s" begin="-2.1s" repeatCount="indefinite" path="M400,225 L128,310"/></circle>
+    <circle r="2.6"><animateMotion dur="3.3s" begin="-1.7s" repeatCount="indefinite" path="M400,225 L672,310"/></circle>
   </g>
-  <text x="185" y="337" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e6edf3">Garmin</text>
 
-  <!-- === GRAYLOG NODE (top-center) === -->
-  <rect x="340" y="15" width="120" height="80" rx="10" fill="#1a2535" stroke="#2d3748" stroke-width="1.5"/>
-  <!-- Graylog icon - magnifying glass / log search -->
-  <g transform="translate(368, 30)">
-    <circle cx="24" cy="22" r="14" fill="none" stroke="#ff3c00" stroke-width="3"/>
-    <line x1="34" y1="32" x2="46" y2="44" stroke="#ff3c00" stroke-width="3.5" stroke-linecap="round"/>
-    <line x1="18" y1="18" x2="30" y2="18" stroke="#ff3c00" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-    <line x1="18" y1="23" x2="28" y2="23" stroke="#ff3c00" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <!-- Graylog: log search -->
+  <rect class="node" x="316" y="18" width="168" height="92" rx="8"/>
+  <g class="ico" transform="translate(384 34)">
+    <circle cx="14" cy="14" r="9"/>
+    <path d="M20.5 20.5 28 28M10 12h8M10 16h5"/>
   </g>
-  <text x="400" y="80" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e6edf3">Graylog</text>
+  <text class="label" x="401" y="90">GRAYLOG</text>
 
-  <!-- === PROXMOX NODE (top-right) === -->
-  <rect x="555" y="110" width="120" height="80" rx="10" fill="#1a2535" stroke="#2d3748" stroke-width="1.5"/>
-  <!-- Proxmox icon - server/VM boxes -->
-  <g transform="translate(583, 125)">
-    <rect x="0" y="0" width="28" height="20" rx="3" fill="#e57000" opacity="0.9"/>
-    <rect x="32" y="0" width="28" height="20" rx="3" fill="#e57000" opacity="0.6"/>
-    <rect x="0" y="24" width="28" height="20" rx="3" fill="#e57000" opacity="0.6"/>
-    <rect x="32" y="24" width="28" height="20" rx="3" fill="#e57000" opacity="0.3"/>
-    <rect x="4" y="4" width="20" height="3" rx="1" fill="#fff" opacity="0.4"/>
-    <rect x="4" y="9" width="12" height="3" rx="1" fill="#fff" opacity="0.4"/>
+  <!-- Home Assistant: house -->
+  <rect class="node" x="44" y="96" width="168" height="92" rx="8"/>
+  <g class="ico" transform="translate(112 112)">
+    <path d="M4 15 16 4l12 11M7 13v14h18V13M13 27v-8h6v8"/>
   </g>
-  <text x="615" y="177" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e6edf3">Proxmox</text>
+  <text class="label" x="129" y="168">HOME ASSISTANT</text>
 
-  <!-- === UNIFI NODE (bottom-right) === -->
-  <rect x="555" y="270" width="120" height="80" rx="10" fill="#1a2535" stroke="#2d3748" stroke-width="1.5"/>
-  <!-- Unifi icon - wifi signal arcs -->
-  <g transform="translate(593, 285)">
-    <circle cx="22" cy="42" r="5" fill="#006fff"/>
-    <path d="M10,32 Q22,18 34,32" stroke="#006fff" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <path d="M2,22 Q22,2 42,22" stroke="#006fff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <!-- Proxmox: stacked hosts -->
+  <rect class="node" x="588" y="96" width="168" height="92" rx="8"/>
+  <g class="ico" transform="translate(656 112)">
+    <rect x="4" y="5" width="24" height="9" rx="2"/>
+    <rect x="4" y="18" width="24" height="9" rx="2"/>
+    <path d="M14 9.5h9M14 22.5h9"/>
   </g>
-  <text x="615" y="337" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#e6edf3">Unifi</text>
+  <g class="ico-dot" transform="translate(656 112)">
+    <circle cx="9" cy="9.5" r="1.3"/>
+    <circle cx="9" cy="22.5" r="1.3"/>
+  </g>
+  <text class="label" x="673" y="168">PROXMOX</text>
 
-  <!-- Bottom label -->
-  <text x="400" y="420" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8892a4" letter-spacing="1">Visual Workflow Automation</text>
+  <!-- Garmin: watch -->
+  <rect class="node" x="44" y="264" width="168" height="92" rx="8"/>
+  <g class="ico" transform="translate(112 280)">
+    <circle cx="16" cy="16" r="9.5"/>
+    <path d="M16 10.5V16l3.8 2.6M11.6 7.6 12.8 2h6.4l1.2 5.6M11.6 24.4 12.8 30h6.4l1.2-5.6"/>
+  </g>
+  <text class="label" x="129" y="336">GARMIN</text>
 
-  <!-- Corner badge -->
-  <rect x="16" y="16" width="90" height="24" rx="12" fill="#EA4B71" opacity="0.15"/>
-  <text x="61" y="32" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#EA4B71">homelab</text>
+  <!-- UniFi: wireless -->
+  <rect class="node" x="588" y="264" width="168" height="92" rx="8"/>
+  <g class="ico" transform="translate(656 280)">
+    <path d="M4 13a17 17 0 0 1 24 0M8.5 18a11 11 0 0 1 15 0M13 23a5 5 0 0 1 6 0"/>
+  </g>
+  <circle class="ico-dot" cx="672" cy="307" r="1.6"/>
+  <text class="label" x="673" y="336">UNIFI</text>
+
+  <!-- n8n hub -->
+  <rect x="322" y="175" width="156" height="100" rx="10" fill="#f0a23b" opacity="0.28" filter="url(#soft)"/>
+  <rect x="322" y="175" width="156" height="100" rx="10" fill="#161a21" stroke="#f0a23b" stroke-width="1.5"/>
+  <text x="400" y="234" text-anchor="middle" font-size="38" font-weight="700" fill="#f0a23b">n8n</text>
+  <text class="tag" x="402" y="258" text-anchor="middle" style="font-size:12px">WORKFLOW</text>
 </svg>

@@ -4,7 +4,7 @@
     {{ partial "profile-image.html" (dict "size" 128 "alt" site.Params.author.name) }}
     <div>
       <h1 class="page-title">{{ site.Params.author.name }}</h1>
-      <p class="hero-headline mono">{{ site.Params.author.headline }}</p>
+      {{ partial "headline.html" . }}
       <p class="page-sub mono">Mexico / USA</p>
     </div>
   </section>
@@ -12,16 +12,22 @@
   <div class="about-sections">
     <section>
       <p class="section-head">Who I am</p>
-      <p>I'm Emmanuel — a homelab enthusiast and tech content creator who spends his recovery rides thinking about infrastructure. My background is in IT and DevOps, and I run a fully self-hosted lab at home covering everything from network automation to smart home integrations.</p>
+      <div class="about-text">
+        <p>I'm Emmanuel — a homelab enthusiast and tech content creator who spends his recovery rides thinking about infrastructure. My background is in IT and DevOps, and I run a fully self-hosted lab at home covering everything from network automation to smart home integrations.</p>
+      </div>
     </section>
     <section>
       <p class="section-head">What I do</p>
-      <p>Through my YouTube channel, I break down complex homelab and tech topics into practical, easy-to-follow content. Whether it's setting up Proxmox, building Docker stacks, or automating your home — I document the real process, mistakes included.</p>
-      <p>Everything I build and learn gets versioned in my GitHub repos so others can follow along or use it as a starting point.</p>
+      <div class="about-text">
+        <p>Through my YouTube channel, I break down complex homelab and tech topics into practical, easy-to-follow content. Whether it's setting up Proxmox, building Docker stacks, or automating your home — I document the real process, mistakes included.</p>
+        <p>Everything I build and learn gets versioned in my GitHub repos so others can follow along or use it as a starting point.</p>
+      </div>
     </section>
     <section>
       <p class="section-head">When I'm not in the lab</p>
-      <p>I'm on the bike. Cycling is my reset — I track everything on TrainerRoad and try to stay consistent even when the homelab pulls me back inside.</p>
+      <div class="about-text">
+        <p>I'm on the bike. Cycling is my reset — I track everything on TrainerRoad and try to stay consistent even when the homelab pulls me back inside.</p>
+      </div>
     </section>
     {{ with .Content }}<section class="prose-interstellar">{{ . }}</section>{{ end }}
   </div>

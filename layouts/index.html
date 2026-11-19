@@ -6,9 +6,9 @@
   <section class="hero">
     {{ partial "profile-image.html" (dict "size" 168 "alt" site.Params.author.name) }}
     <h1 class="hero-name">{{ site.Params.author.name }}</h1>
-    <p class="hero-headline mono">{{ site.Params.author.headline }}</p>
+    {{ partial "headline.html" . }}
     <p class="hero-stats mono">
-      <a href="/videos/">{{ len $videos }} videos</a><span class="dot">·</span><a href="/resources/">{{ $repos }} repos</a>
+      <a href="/videos/"><span class="num">{{ len $videos }}</span> videos</a><span class="dot">·</span><a href="/resources/"><span class="num">{{ $repos }}</span> repos</a>
     </p>
     {{ with .Content }}<div class="hero-bio prose-interstellar">{{ . }}</div>{{ end }}
     {{ partial "social-links.html" (dict "variant" "chips") }}
@@ -32,9 +32,11 @@
           <span class="vsep"></span>
           {{ end }}
           <a class="project-name" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-          <a class="btn btn-sm" href="{{ .url }}" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
         <p class="project-desc">{{ .description }}</p>
+        <p class="btn-row"><a class="btn btn-sm btn-accent" href="{{ .url }}" target="_blank" rel="noopener">
+          {{ partial "brand-icon.html" (dict "name" "github" "color" "currentColor" "size" 12) }} View on GitHub ↗
+        </a></p>
       </div>
     </article>
   </section>

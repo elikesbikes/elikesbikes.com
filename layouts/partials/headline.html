@@ -1,0 +1,9 @@
+{{- /* The author headline (languages.en.toml, parts joined by " · ") as separate spans, so it never
+       wraps mid-phrase or starts a line with a dot: one line on wide screens, one phrase per line on phones.
+       Usage: partial "headline.html" . */ -}}
+<p class="hero-headline mono">
+  {{- range $i, $part := split site.Params.author.headline " · " -}}
+    {{- if $i }}<span class="sep" aria-hidden="true"> · </span>{{ end -}}
+    <span class="part">{{ $part }}</span>
+  {{- end -}}
+</p>
