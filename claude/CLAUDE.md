@@ -177,9 +177,16 @@ watcher only follows directories that existed at startup.
   ignored, the rest could be `git rm --cached` (confirmed 2026-10-25: Cloudflare builds from source).
 - Mobile layout verified in headless Chromium at 390, 500, 700, 820 and 900px (2026-11-18), not on a real
   phone; Safari and Firefox not checked.
-- Every build logs `WARN Module "github.com/nunocoracao/blowfish/v2" is not compatible with this Hugo
-  version: 0.141.0/0.150.0 extended`: Blowfish v2.90.0 declares Hugo 0.150.0 as its newest, the site builds
-  with 0.151.0. Blowfish v2.91.0 declares 0.151.0 (its `config.toml`), untested here. In the Findings Backlog.
+- Local builds log `WARN Module "github.com/nunocoracao/blowfish/v2" is not compatible with this Hugo
+  version: 0.141.0/0.150.0 extended`: Blowfish v2.90.0 names Hugo 0.150.0 as its newest and the local binary
+  is 0.151.0. Blowfish v2.91.0 names 0.151.0 (its `config.toml`), untested here. In the Findings Backlog.
+- **Production is not built by the Hugo that `build.sh` downloads.** The live home page carries
+  `<meta name=generator content="Hugo 0.147.7">` (checked 2026-11-18, after d1c5f23); a local build of the
+  same commit says 0.151.0. So every "Hugo 0.151.0" in this file describes the local binary and the
+  download, not what builds the live site. Seen effect: the live stylesheet is less minified (132,905 vs
+  114,034 bytes); the pages render the same. Cause not confirmed (likely the build image's own `hugo` is
+  found before the downloaded one). Whether the Cloudflare log shows the Blowfish warning was not read.
+  In the Findings Backlog.
 
 ---
 
@@ -189,4 +196,4 @@ watcher only follows directories that existed at startup.
 |---|---|---|
 | 2026-10-25 | b825b35 | Interstellar restyle; repo moved to `~/devops/projects`; GitLab mirror. |
 | 2026-11-09 | b4bc5e3 | `static/mcc/avatars`: MCC Discord post pictures. |
-| 2026-11-18 | (this commit) | Elegance pass, theme unchanged: glow layer without seams, header on the content column, current section marked in the nav, section labels with a rule, home project card with the picture beside the words and the n8n picture redrawn in the palette (its labels no longer overlap the icons), about page with a label column and a single row of social tiles, headline that wraps by phrase, video cards with tags on one line across a row, amber search focus, own 404 page, entrance motion. Tested: production build (61 pages, same single Blowfish warning as before); headless Chromium screenshots of every page type at 1440px plus 390-900px; dropdown, search, phone menu, card hover, scrolled header; no horizontal scroll and no script errors. Not tested: real phones, Safari, Firefox. |
+| 2026-11-18 | d1c5f23 | Elegance pass, theme unchanged: glow layer without seams, header on the content column, current section marked in the nav, section labels with a rule, home project card with the picture beside the words and the n8n picture redrawn in the palette (its labels no longer overlap the icons), about page with a label column and a single row of social tiles, headline that wraps by phrase, video cards with tags on one line across a row, amber search focus, own 404 page, entrance motion. Tested: local production build with Hugo 0.151.0 (61 pages, the one Blowfish warning); headless Chromium screenshots of every page type at 1440px plus 390-900px; dropdown, search, phone menu, card hover, scrolled header; no horizontal scroll and no script errors; after the deploy, the live pages, stylesheet, 404 page and MCC pictures. Not tested: real phones, Safari, Firefox. |
